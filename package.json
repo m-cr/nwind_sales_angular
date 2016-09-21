@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server",
+    "start:dev": "DATABASE_URL=postgres://localhost/nwind_sales_angular PORT=3000 SYNC=true nodemon -e html,js server.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +17,15 @@
   "bugs": {
     "url": "https://github.com/m-cr/nwind_sales_angular/issues"
   },
-  "homepage": "https://github.com/m-cr/nwind_sales_angular#readme"
+  "homepage": "https://github.com/m-cr/nwind_sales_angular#readme",
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-ui-router": "^1.0.0-beta.2",
+    "bluebird": "^3.4.6",
+    "body-parser": "^1.15.2",
+    "bootstrap": "^3.3.7",
+    "express": "^4.14.0",
+    "pg": "^6.1.0",
+    "sequelize": "^3.24.3"
+  }
 }

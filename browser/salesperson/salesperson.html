@@ -1,0 +1,18 @@
+<div class="container">
+	<div class='well'>
+		<form class="form-group" name='salesPersonForm'>
+			<input type="text" name="name" ng-model='name' value='enter name here' class='form-control' style='margin-bottom: 10px' required>
+			<button ng-disabled='salesPersonForm.$invalid' ng-click='create(name)' type='submit' class='btn btn-primary'>Submit SalesPerson</button>	
+		</form>
+	</div>
+
+	<div class='panel panel-default' ng-repeat='salesperson in salespeople'>
+		<div class='panel-heading'>
+			{{salesperson.name}}
+			<form style='display: inline'>
+					<button on-click='delete(salesperson.id)' class='btn btn-danger pull-right'>Delete</button>
+					<br clear='all'>
+			</form>
+		</div>
+	</div>
+</div>

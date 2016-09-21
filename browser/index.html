@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Acme Sales Angular</title>
+	<link type="text/css" rel="stylesheet" href='/bootstrap/dist/css/bootstrap.css'/>
+	<script src='/angular/angular.js'></script>
+	<script src='/angular-ui-router/release/angular-ui-router.js'></script>
+	<script src='/app.js' defer></script>
+	<script src='/CompanyStatusControl.js' defer></script>
+	<script src='/routes.js' defer></script>
+	<script src='/region/regionservice.js' defer></script>
+	<script src='/region/regioncontroller.js' defer></script>
+	<script src='/salesperson/salespersonservice.js' defer></script>
+	<script src='/salesperson/salespersoncontroller.js' defer></script>
+</head>
+<body ng-app='app'>
+	<div class='container' >
+		<h1>Acme Sales Angular</h1>
+		<ul class='nav nav-tabs' style='margin-bottom: 10px'>
+			<li ui-sref-active="active"><a ui-sref='home'>Home</a></li>
+			<li ui-sref-active="active"><a ui-sref='salesperson'>SalesPerson</a></li>
+			<li ui-sref-active="active"><a ui-sref='region'>Region</a></li>
+		</ul>
+
+		<div class='container'>
+			<ui-view></ui-view>
+		</div>
+	</div>
+</body>
+</html>

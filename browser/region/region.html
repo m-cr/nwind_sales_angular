@@ -1,0 +1,18 @@
+<div class="container">
+	<div class='well'>
+		<form class="form-group" name='regionForm'>
+			<input type="text" ng-model='zip' value='enter zip here' class='form-control' style='margin-bottom: 10px' required>
+			<button ng-disabled='regionForm.$invalid' ng-click='create(zip); zip=""' type='submit' class='btn btn-primary'>Submit Region</button>	
+		</form>
+	</div>
+
+	<div class='panel panel-default' ng-repeat='region in regions'>
+		<div class='panel-heading'>
+			{{region.zip}}
+			<form style='display: inline'>
+					<button class='btn btn-danger pull-right' on-click='delete(region.id)'>Delete</button>
+					<br clear='all'>
+			</form>
+		</div>
+	</div>
+</div>
