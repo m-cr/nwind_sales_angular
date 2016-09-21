@@ -2,12 +2,12 @@ app.controller('CompanyStatusController', function(RegionFactory, SalesPersonFac
 
 	RegionFactory.fetchAll()
 	.then(function(regions){
-		$scope.regions = regions.length;
+		$scope.regions = regions;
 	});
 
 	SalesPersonFactory.fetchAll()
 	.then(function(salesPeople){
-		$scope.salespeople = salesPeople.length;
+		$scope.salespeople = salesPeople;
 	});
 
 });

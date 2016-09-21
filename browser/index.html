@@ -23,8 +23,12 @@
 		</ul>
 
 		<div class='container' ng-controller='CompanyStatusController'>
-			<div class='well'>We have {{salespeople}} SalesPeople!</div>
-			<div class='well'>We have {{regions}} Regions!</div>
+			<div ng-class='{"alert-success": salespeople.length > 3}' class='alert': 5px'>
+				We have {{salespeople.length}} SalesPeople!
+			</div>
+			<div ng-class='{"alert-success": regions.length > 3}' class='alert'>
+				We have {{regions.length}} Regions!
+			</div>
 		</div>
 
 		<div class='container'>
