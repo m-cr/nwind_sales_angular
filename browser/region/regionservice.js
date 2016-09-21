@@ -22,8 +22,8 @@ app.factory('RegionFactory', function($http){
 	};
 
 	RegionFactory.delete = function(region){
-		return $http.delete('api/region/' + region)
-		.then(function(region){
+		return $http.delete('api/region/' + region.id)
+		.then(function(){
         	var idx = regions.indexOf(region);
         	regions.splice(idx, 1);
       	});

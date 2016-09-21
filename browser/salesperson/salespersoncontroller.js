@@ -15,4 +15,11 @@ app.controller('SalesPersonController', function($scope, SalesPersonFactory){
 			console.log('got person back');
 		});
 	};
+
+	$scope.delete = function(salesperson){
+		SalesPersonFactory.delete(salesperson)
+		.then(function(){
+			console.log('deleted')
+		});
+	};
 });

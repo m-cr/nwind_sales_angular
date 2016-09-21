@@ -14,15 +14,15 @@ router.get('/', function(req, res, next){
 
 router.post('/', function(req, res, next){
 	SalesPerson.create({name: req.body.name})
-	.then(function(){
-		res.sendStatus(202);
+	.then(function(salesperson){
+		res.send(salesperson);
 	})
 	.catch(next);
 });
 
 
 router.delete('/:id', function(req, res, next){
-	Salesperson.delete( {where: {id: req.params.id} } )
+	SalesPerson.destroy( {where: {id: req.params.id} } )
 	.then(function(){
 		res.sendStatus(202);
 	})

@@ -17,9 +17,16 @@ app.factory('SalesPersonFactory', function($http){
 		.then(function(response){
 			var newSalesPerson = response.data;
 			salespeople.push(newSalesPerson);
-			console.log(newSalesPerson);
 			return newSalesPerson;
 		});
+	};
+
+	SalesPersonFactory.delete = function(salesperson){
+		return $http.delete('api/salesperson/' + salesperson.id)
+		.then(function(){
+        	var idx = salespeople.indexOf(salesperson);
+        	salespeople.splice(idx, 1);
+      	});
 	};
 
 	return SalesPersonFactory;

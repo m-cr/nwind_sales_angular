@@ -1,4 +1,9 @@
 app.controller('RegionController', function($scope, RegionFactory){
+	RegionFactory.fetchAll()
+	.then(function(regions){
+		$scope.regions = regions;
+	});
+	
 	$scope.create = function(zip){
 		console.log(zip);
 		var newRegion = {
@@ -13,12 +18,9 @@ app.controller('RegionController', function($scope, RegionFactory){
 
 	$scope.delete = function(region){
 		RegionFactory.delete(region)
-		.then(function(){});
+		.then(function(){
+			console.log('deleted')
+		});
 	};
 
-	RegionFactory.fetchAll()
-	.then(function(regions){
-		console.log(regions);
-		$scope.regions = regions;
-	});
 });
