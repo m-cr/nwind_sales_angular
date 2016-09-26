@@ -1,7 +1,7 @@
 <div class="container">
 	<div class='well'>
 		<form class="form-group" name='salesPersonForm'>
-			<input type="text" name="name" ng-model='name' value='enter name here' class='form-control' style='margin-bottom: 10px' required>
+			<input type="text" name="salesPerson.name" ng-model='name' value='enter name here' class='form-control' style='margin-bottom: 10px' required>
 			<button ng-disabled='salesPersonForm.$invalid' ng-click='create(name)' type='submit' class='btn btn-primary'>Submit SalesPerson</button>	
 		</form>
 	</div>

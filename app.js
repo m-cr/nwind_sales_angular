@@ -7,8 +7,8 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'node_modules')));
 app.use(express.static(path.join(__dirname, 'browser')));
 
-app.use('/api/salesperson', require('./routes/salesperson'));
-app.use('/api/region', require('./routes/region'));
+app.use('/api/salespeople', require('./routes/salespeople'));
+app.use('/api/regions', require('./routes/regions'));
 
 app.get('/', function(req, res, next){
 	res.sendFile(path.join(__dirname, 'browser/index.html'));

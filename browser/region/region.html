@@ -1,7 +1,7 @@
 <div class="container">
 	<div class='well'>
 		<form class="form-group" name='regionForm'>
-			<input type="text" ng-model='zip' value='enter zip here' class='form-control' style='margin-bottom: 10px' required>
+			<input type="text" ng-model='region.zip' value='enter zip here' class='form-control' style='margin-bottom: 10px' required>
 			<button ng-disabled='regionForm.$invalid' ng-click='create(zip); zip=""' type='submit' class='btn btn-primary'>Submit Region</button>	
 		</form>
 	</div>

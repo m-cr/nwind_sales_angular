@@ -1,15 +1,7 @@
-var Sequelize = require('sequelize');
-var db = new Sequelize(process.env.DATABASE_URL, {
-	logging: false
-});
+var db = require('./_db');
+var SalesPerson = require('./salesPerson');
+var Region = require('./region');
 
-var SalesPerson = db.define('salesperson', {
-	name: Sequelize.STRING
-},{});
-
-var Region = db.define('region', {
-	zip: Sequelize.STRING
-});
 
 var sync = function(){
 	return db.sync({force: true});

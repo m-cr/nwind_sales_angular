@@ -4,8 +4,10 @@ app.factory('RegionFactory', function($http){
 
 	var RegionFactory = {};
 
+  var url = '/api/regions/';
+
 	RegionFactory.fetchAll = function(){
-		return $http.get('/api/region')
+		return $http.get(url)
 		.then(function(response){
 			angular.copy(response.data, regions);
 			return regions;
@@ -13,7 +15,7 @@ app.factory('RegionFactory', function($http){
 	};
 
 	RegionFactory.create = function(data){
-		return $http.post('api/region', data)
+		return $http.post(url, data)
 		.then(function(response){
 			var newRegion = response.data;
 			regions.push(newRegion);
@@ -22,7 +24,7 @@ app.factory('RegionFactory', function($http){
 	};
 
 	RegionFactory.delete = function(region){
-		return $http.delete('api/region/' + region.id)
+		return $http.delete(url + region.id)
 		.then(function(){
         	var idx = regions.indexOf(region);
         	regions.splice(idx, 1);

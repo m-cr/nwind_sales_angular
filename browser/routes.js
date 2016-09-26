@@ -1,14 +1,14 @@
 app.config(function($stateProvider){
-	$stateProvider.state('salesperson', {
-		url: '/salesperson',
+	$stateProvider.state('salesPeople', {
+		url: '/salespeople',
 		templateUrl: 'salesperson/salesperson.html',
 		controller: 'SalesPersonController'
 	});
 });
 
 app.config(function($stateProvider){
-	$stateProvider.state('region', {
-		url: '/region',
+	$stateProvider.state('regions', {
+		url: '/regions',
 		templateUrl: 'region/region.html',
 		controller: 'RegionController'
 	});
